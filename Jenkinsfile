@@ -1,6 +1,15 @@
 pipeline {
+
+    environment{
+        JAVA_TOOL_OPTION = "-Duser.home=/home/oleg/"
+    }
     agent { 
-        label 'java' 
+        docker {
+            image "maven:latest"
+            label "docker"
+            args "-v /tmp/maven:/home/oleg/.m2 -e MAVEN_CONFIG=/home/oleg/.m2"
+            
+        }
     }
 
     stages{
