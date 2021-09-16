@@ -15,7 +15,6 @@ pipeline {
         stage("Build"){
             steps{
                 sh "mvn -version"
-                sh "./mvnw package"  
                 sh "java -jar target/*.jar"
 
             }
