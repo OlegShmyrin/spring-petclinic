@@ -7,8 +7,7 @@ pipeline {
         docker {
             image "maven:latest"
             label "docker"
-            args "-v /tmp/maven:/home/oleg/.m2 -e MAVEN_CONFIG=/home/oleg/.m2"
-            
+            args "-v /tmp/maven:/home/oleg/.m2 -e MAVEN_CONFIG=/home/oleg/.m2"   
         }
     }
 
@@ -16,7 +15,9 @@ pipeline {
         stage("Build"){
             steps{
                 sh "mvn -version"
-                sh "mvn clean install"
+                sh "./mvnw package"  
+                sh "java -jar target/*.jar"
+
             }
         }
     }
