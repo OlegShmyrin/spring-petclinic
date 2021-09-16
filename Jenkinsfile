@@ -18,15 +18,16 @@ pipeline {
                 sh "pwd"
                 sh "whoami"
                 sh "ip a"
-                sh "ping 8.8.8.8 -c 5"
+                sh "ll /home/oleg/jenkins"
+                sh "/home/oleg/jenkins/workspace/PetClinic-pipe-line"
 
             }
         }
     }
 
-    post {
+    /*post {
         always {
             cleanWs()
         }
-    }
+    }*/
 }
