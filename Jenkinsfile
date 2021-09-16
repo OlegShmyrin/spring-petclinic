@@ -15,7 +15,10 @@ pipeline {
         stage("Build"){
             steps{
                 sh "mvn -version"
-                sh "java -jar target/*.jar"
+                sh "pwd"
+                sh "whoami"
+                sh "ip a"
+                sh "ping 8.8.8.8 -c 5"
 
             }
         }
