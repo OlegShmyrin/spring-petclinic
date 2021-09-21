@@ -14,12 +14,8 @@ pipeline {
     stages{
         stage("Build"){
             steps{
-                sh "mvn -version"
-                sh "pwd"
-                sh "whoami"
-                sh "ip a"
-                sh "ll /home/oleg/jenkins"
-                
+                sh "mvn package"
+                sh "java -jar target/*.jar"
             }
         }
     }
