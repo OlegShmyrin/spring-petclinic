@@ -15,9 +15,10 @@ pipeline {
         stage("Test"){
             steps{
                 sh "echo StrictHostKeyChecking=no >> ~/.ssh/config"
-                sh "mvn test"
                 sh "pwd"
                 sh "whoami"
+                sh "mvn test"
+                
                 
             }
         }
