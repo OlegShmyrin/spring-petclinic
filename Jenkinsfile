@@ -12,10 +12,12 @@ pipeline {
     }
 
     stages{
-        stage("Build"){
+        stage("Test"){
             steps{
-                sh "mvn package"
-                sh "java -jar target/*.jar"
+                sh "mvn test"
+                sh "pwd"
+                sh "whoami"
+                
             }
         }
     }
