@@ -15,7 +15,8 @@ pipeline {
         stage("Test"){
             steps{
                 //sh "echo StrictHostKeyChecking=no >> ~/.ssh/config"
-                sh "mvn clean install"
+                sh "sudo apt get install openssh-client"
+                sh "mvn test"
                 
                 
             }
