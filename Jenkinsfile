@@ -19,8 +19,7 @@ pipeline {
                 sh "whoami"
                 sh "ip a"
                 sh "ll /home/oleg/jenkins"
-                sh "/home/oleg/jenkins/workspace/PetClinic-pipe-line"
-
+                
             }
         }
     }
