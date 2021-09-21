@@ -1,13 +1,12 @@
 pipeline {
 
     environment{
-        JAVA_TOOL_OPTION = "-Duser.home=/var/maven/"
+        JAVA_TOOL_OPTION = "-Duser.home=/home/jenkins"
     }
     agent { 
-        docker {
-            image "maven:3.6.3-openjdk-17-slim"
+        dockerfile {
             label "docker"
-            args "-v /tmp/maven:/home/maven/.m2 -e MAVEN_CONFIG=/home/maven/.m2"   
+            args "-v /tmp/maven:/home/jenkins/.m2 -e MAVEN_CONFIG=/home/jenkins/.m2"   
         }
     }
 
@@ -15,7 +14,7 @@ pipeline {
         stage("Test"){
             steps{
                 //sh "echo StrictHostKeyChecking=no >> ~/.ssh/config"
-                sh "sudo apt get install openssh-client"
+                sh "ssh -V"
                 sh "mvn test"
                 
                 
