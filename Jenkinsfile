@@ -1,13 +1,13 @@
 pipeline {
 
     environment{
-        JAVA_TOOL_OPTION = "-Duser.home=/home/oleg/"
+        JAVA_TOOL_OPTION = "-Duser.home=/var/maven/"
     }
     agent { 
         docker {
             image "maven:3.6.3-openjdk-17-slim"
             label "docker"
-            args "-v /tmp/maven:/home/oleg/.m2 -e MAVEN_CONFIG=/home/oleg/.m2"   
+            args "-v /tmp/maven:/home/maven/.m2 -e MAVEN_CONFIG=/home/maven/.m2"   
         }
     }
 
