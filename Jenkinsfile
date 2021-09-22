@@ -8,15 +8,18 @@ pipeline {
         terraform 'terraform-aws'
     }
 
-    agent { 
-        dockerfile {
-            label "docker"
-            args "-v /tmp/maven:/home/jenkins/.m2 -e MAVEN_CONFIG=/home/jenkins/.m2"   
-        }
-    }
+    
 
     stages{
         stage("Test"){
+
+            agent { 
+                dockerfile {
+                    label "docker"
+                    args "-v /tmp/maven:/home/jenkins/.m2 -e MAVEN_CONFIG=/home/jenkins/.m2"   
+                    }
+                }
+
             steps{
                 // sh "echo StrictHostKeyChecking=no >> ~/.ssh/config"
                 sh "ssh -V"
@@ -27,6 +30,10 @@ pipeline {
         }
 
         stage ("Terraform Init"){
+            agent {
+                label "terraform"
+            }
+            
             steps{
                sh 'terraform init'
 
