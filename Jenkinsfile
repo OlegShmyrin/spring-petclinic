@@ -3,6 +3,11 @@ pipeline {
     environment{
         JAVA_TOOL_OPTION = "-Duser.home=/home/jenkins"
     }
+
+    tools {
+        terraform 'terraform-aws'
+    }
+
     agent { 
         dockerfile {
             label "docker"
@@ -15,11 +20,19 @@ pipeline {
             steps{
                 // sh "echo StrictHostKeyChecking=no >> ~/.ssh/config"
                 sh "ssh -V"
-                sh "mvn test"
+                // sh "mvn test"
                 
                 
             }
         }
+
+        stage ("Terraform Init"){
+            steps{
+               sh 'terraform init'
+
+            }
+        }
+
     }
 
     /*post {
