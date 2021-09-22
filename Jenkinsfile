@@ -13,7 +13,7 @@ pipeline {
     stages{
         stage("Test"){
             steps{
-                //sh "echo StrictHostKeyChecking=no >> ~/.ssh/config"
+                // sh "echo StrictHostKeyChecking=no >> ~/.ssh/config"
                 sh "ssh -V"
                 sh "mvn test"
                 
