@@ -1,5 +1,7 @@
 pipeline {
 
+    agent any
+
     environment{
         JAVA_TOOL_OPTION = "-Duser.home=/home/jenkins"
     }
