@@ -13,7 +13,7 @@ pipeline {
     
 
     stages{
-        stage("Test"){
+       /* stage("Test"){
 
             agent { 
                 dockerfile {
@@ -30,7 +30,7 @@ pipeline {
                 
             }
         }
-
+            */
         stage ("Terraform Init"){
             agent {
                 label "terraform"
