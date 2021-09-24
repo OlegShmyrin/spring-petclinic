@@ -1,5 +1,12 @@
+environment {
+    AWS_ACCESS_KEY_ID = env.AWS_ACCESS_KEY_ID
+
+}
+
 provider "aws" {
    region = "eu-central-1"
+   secret_key = "${AWS_SECRET_ACCESS_KEY}"
+   access_key = AWS_ACCESS_KEY_ID
 }
 
 resource "aws_vpc" "TEST" {
