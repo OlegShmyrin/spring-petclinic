@@ -14,3 +14,7 @@ resource "aws_instance" "AppServer" {
     Owner = "Oleg Shmyrin"
   }
 }
+
+output "public_ip" {
+  value =  aws_instance.AppServer.public_ip
+}
