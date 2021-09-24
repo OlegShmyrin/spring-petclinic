@@ -31,13 +31,13 @@ pipeline {
             }
         }
             */
-        stage ("Terraform Init"){
+        stage ("Terraform Apply"){
             agent {
                 label "terraform"
             }
             
             steps{
-               sh 'terraform plan'
+               sh 'terraform apply'
 
             }
         }
