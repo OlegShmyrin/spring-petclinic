@@ -38,8 +38,8 @@ pipeline {
             
             steps{
                sh "terraform init"
-               sh "terraform apply -auto-approve -state=./output.tfstate"
-
+               //sh "terraform apply -auto-approve -state=./output.tfstate"
+               sh "terraform apply -destroy -auto-approve" 
             }
         }
 
