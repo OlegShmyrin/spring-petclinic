@@ -35,6 +35,8 @@ pipeline {
             agent {
                 label "ansible"
             }
+
+            
             
             steps{
                sh "terraform init"
@@ -43,6 +45,12 @@ pipeline {
                sh "terraform output public_AppServer_ip > host.txt"
 
             }
+
+            resource "local_file" "public_ip" {
+                content  = public_AppServer_ip
+                filename = "public_ip.pem"
+            }
+
         }
 
     }
