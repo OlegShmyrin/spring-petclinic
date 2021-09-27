@@ -15,21 +15,8 @@ resource "aws_instance" "AppServer" {
   }
 }
 
-resource "aws_instance" "AnsibleServer" {
-  ami           = "ami-05f7491af5eef733a" # Ubuntu 20
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "PetClinicAppSRV"
-    Owner = "Oleg Shmyrin"
-  }
-}
-
-
-
-
 output "public_AppServer_ip" {
-  
+
   value =  aws_instance.AppServer.public_ip
 }
 
