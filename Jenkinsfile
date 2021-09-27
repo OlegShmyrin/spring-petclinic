@@ -33,11 +33,11 @@ pipeline {
             */
         stage ("Terraform Apply"){
             agent {
-                label "terraform"
+                label "ansible terraform"
             }
             
             steps{
-               sh "terraform apply -auto-approve"
+               sh "terraform apply -auto-approve -state=./output.tfstate"
 
             }
         }
