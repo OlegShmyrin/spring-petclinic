@@ -33,7 +33,7 @@ pipeline {
             */
         stage ("Terraform Apply"){
             agent {
-                label "ansible terraform"
+                label "ansible"
             }
             
             steps{
