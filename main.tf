@@ -37,6 +37,6 @@ resource "aws_instance" "AppServer" {
   tags = {
     Name = "PetClinicAppSRV"
     Owner = "Oleg Shmyrin"
-    key_name      = aws_key_pair.generated_key.generated_key_name
+    key_name      = "aws_key_pair.generated_key.generated_key_name"
   }
 }
