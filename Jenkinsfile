@@ -45,7 +45,7 @@ pipeline {
                sh "terraform output public_AppServer_ip > host.txt"
                sh "pwd"
                sh "ll"
-               sh "cat *.tfstate | grep public_ip\" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}"" 
+               //sh "cat *.tfstate | grep public_ip\" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}"" 
                
 
             }
