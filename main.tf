@@ -6,17 +6,6 @@ provider "aws" {
    # version = "~> 2.70"
 }
 
-resource "aws_instance" "AppServer" {
-  ami           = "ami-05f7491af5eef733a" # Ubuntu 20
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "PetClinicAppSRV"
-    Owner = "Oleg Shmyrin"
-    key_name      = aws_key_pair.generated_key.terraform-key-pair
-  }
-}
-
 variable "generated_key_name" {
   type        = string
   default     = "terraform-key-pair"
@@ -38,5 +27,16 @@ resource "aws_key_pair" "generated_key" {
 
   provisioner "local-exec" {
     command = "chmod 400 ./'${var.generated_key_name}'.pem"
+  }
+}
+
+resource "aws_instance" "AppServer" {
+  ami           = "ami-05f7491af5eef733a" # Ubuntu 20
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "PetClinicAppSRV"
+    Owner = "Oleg Shmyrin"
+    key_name      = aws_key_pair.generated_key.generated_key_name
   }
 }
