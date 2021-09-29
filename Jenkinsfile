@@ -43,7 +43,7 @@ pipeline {
                sh "terraform apply -auto-approve"
                //sh "terraform apply -auto-approve"
                //sh "terraform apply -destroy -auto-approve"
-               sh "terraform output -state=outputs.tf"
+               sh "terraform output"
                sh "pwd"
                sh "ls -la"
                //sh "cat *.tfstate | grep public_ip\" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}"" 
