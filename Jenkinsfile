@@ -44,7 +44,7 @@ pipeline {
                //sh "terraform apply -destroy -auto-approve"
                sh "terraform output public_AppServer_ip > host.txt"
                sh "pwd"
-               sh "ll"
+               sh "ls -la"
                //sh "cat *.tfstate | grep public_ip\" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}"" 
                
 
