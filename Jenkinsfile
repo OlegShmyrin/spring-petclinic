@@ -40,7 +40,8 @@ pipeline {
             
             steps{
                sh "terraform init"
-               sh "terraform apply -auto-approve -state=./output.tfstate"
+               //sh "terraform apply -auto-approve -state=./output.tfstate"
+               sh "terraform apply -auto-approve"
                //sh "terraform apply -destroy -auto-approve"
                sh "terraform output public_AppServer_ip > host.txt"
                sh "pwd"
