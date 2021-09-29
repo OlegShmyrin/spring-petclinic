@@ -49,7 +49,6 @@ pipeline {
                //sh "cat *.tfstate | grep public_ip\" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}"" 
                sh "cat outputs.tf"
                sh "cat inventory*"
-
             }
 
             /* resource "local_file" "public_ip" {
