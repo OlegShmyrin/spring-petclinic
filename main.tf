@@ -15,8 +15,8 @@ resource "aws_instance" "AppServer" {
   }
 }
 
-output "public_AppServer_ip" {
+#output "public_AppServer_ip" {
 
-  value =  aws_instance.AppServer.public_ip
-}
+ # value =  aws_instance.AppServer.public_ip
+#}
 
