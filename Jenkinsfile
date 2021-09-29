@@ -45,7 +45,7 @@ pipeline {
                //sh "cat outputs.tf"
                sh "cat inventory"
                sh "chmod -x inventory"
-               //sh "ansible -i inventory all -m ping"
+               sh "ansible -i inventory all -m ping"
             }
 
             /* resource "local_file" "public_ip" {

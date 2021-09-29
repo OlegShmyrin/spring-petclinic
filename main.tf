@@ -33,10 +33,11 @@ resource "aws_key_pair" "generated_key" {
 resource "aws_instance" "AppServer" {
   ami           = "ami-05f7491af5eef733a" # Ubuntu 20
   instance_type = "t2.micro"
+  key_name      = "aws_key_pair.generated_key.generated_key_name"
 
   tags = {
     Name = "PetClinicAppSRV"
     Owner = "Oleg Shmyrin"
-    key_name      = "aws_key_pair.generated_key.generated_key_name"
+    
   }
 }
