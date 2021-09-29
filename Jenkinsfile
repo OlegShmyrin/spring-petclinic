@@ -41,14 +41,10 @@ pipeline {
             steps{
                sh "terraform init"
                sh "terraform apply -auto-approve"
-               //sh "terraform apply -auto-approve"
-               //sh "terraform apply -destroy -auto-approve"
                sh "terraform output"
-               sh "pwd"
-               sh "ls -la"
-               //sh "cat *.tfstate | grep public_ip\" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}"" 
-               sh "cat outputs.tf"
-               sh "cat inventory*"
+               //sh "cat outputs.tf"
+               sh "cat inventory"
+               sh "chmod -x inventory"
             }
 
             /* resource "local_file" "public_ip" {
