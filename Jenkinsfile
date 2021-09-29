@@ -40,7 +40,7 @@ pipeline {
             
             steps{
                sh "terraform init"
-               sh "terraform apply -auto-approve -state=./outputs.tf"
+               sh "terraform apply -auto-approve"
                //sh "terraform apply -auto-approve"
                //sh "terraform apply -destroy -auto-approve"
                sh "terraform output public_AppServer_ip > host.txt"
@@ -48,6 +48,7 @@ pipeline {
                sh "ls -la"
                //sh "cat *.tfstate | grep public_ip\" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}"" 
                sh "cat outputs.tf"
+               sh "cat inventory*"
 
             }
 
