@@ -50,11 +50,11 @@ pipeline {
 
             }
 
-            resource "local_file" "public_ip" {
+            /* resource "local_file" "public_ip" {
                 content  = public_AppServer_ip
                 filename = "public_ip.pem"
             }
-
+            */
         }
 
     }
