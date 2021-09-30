@@ -35,7 +35,7 @@ resource "aws_instance" "AppServer" {
   instance_type = "t2.micro"
   key_name      = "${var.generated_key_name}"
 
-  vpc_id    = "vpc-5387e039"
+  #vpc_id    = "vpc-5387e039"
   subnet_id = "subnet-88078fc4"
   vpc_security_group_ids = ["sg-0248e3c294269ae4e","sg-7fa9a70a"]
  
