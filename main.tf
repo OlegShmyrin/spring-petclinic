@@ -21,6 +21,10 @@ resource "aws_key_pair" "generated_key" {
   key_name   = var.generated_key_name
   public_key = tls_private_key.PetClinic_key.public_key_openssh
 
+   provisioner "local-exec" {
+    command = "sudo chmod 666 ./'${var.generated_key_name}'.pem"
+  }
+
   provisioner "local-exec" {    # Generate "terraform-key-pair.pem" in current directory
     command = "sudo echo '${tls_private_key.PetClinic_key.private_key_pem}' > ./'${var.generated_key_name}'.pem"
   }
