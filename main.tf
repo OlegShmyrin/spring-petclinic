@@ -35,9 +35,19 @@ resource "aws_instance" "AppServer" {
   instance_type = "t2.micro"
   key_name      = "${var.generated_key_name}"
 
+  vpc_id    = "${var.vpc_id}"
+  subnet_id = "${var.subnet_id}"
+  vpc_security_group_ids = ["sg-7fa9a70a"]
+ 
+
   tags = {
     Name = "PetClinicAppSRV"
     Owner = "Oleg Shmyrin"
     
   }
 }
+
+
+################################################################################
+# VPC Module
+################################################################################
