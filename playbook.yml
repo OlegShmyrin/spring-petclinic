@@ -2,10 +2,7 @@
 - name: Test connect to servers
   hosts: AppServers
   become: yes
-  apt:
-    upgrade: yes
-    update_cache: yes
-    cache_valid_time: 86400
+  apt: upgrade=yes update_cache=yes cache_valid_time=86400
 
   tasks: 
   - name: Ping to servers
