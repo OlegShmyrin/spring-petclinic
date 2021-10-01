@@ -3,7 +3,8 @@
   hosts: AppServers
   become: yes
    
-- name: Apt Update   
+- name: Apt Update
+  become: yes
   apt:
     upgrade: yes
     update_cache: yes
