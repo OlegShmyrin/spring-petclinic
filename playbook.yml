@@ -8,10 +8,11 @@
     ping:
 
   - name: Install Java and Maven
-    apt: name=openjdk-16-jdk-headless state=latest
+    apt: name=openjdk-17-jdk-headless state=latest
 
   - name: Install Maven
-    apt: name=maven state=latest
+    apt: 
+      name: maven=3.6.3
 
   - name: Install GIT
     apt: name=git state=latest  
