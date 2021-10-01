@@ -23,5 +23,5 @@
     
   - name: Run PetClinic
     shell: "cd /src/petclinic"
-    shell: "maven package"
+    shell: "mvn package"
     shell: "java -jar target/*.jar"
