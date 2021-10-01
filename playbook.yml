@@ -18,8 +18,8 @@
 
   - name: Git clone repo
     ansible.builtin.git:
-    repo: https://github.com/spring-projects/spring-petclinic.git  #TODO: Why no git file in my cloned repo
-    dest: /src/petclinic
+      repo: https://github.com/spring-projects/spring-petclinic.git  #TODO: Why no git file in my cloned repo
+      dest: /src/petclinic
     
   - name: Run PetClinic
     shell: "cd /src/petclinic"
