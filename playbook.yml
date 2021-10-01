@@ -8,7 +8,7 @@
     ping:
 
   - name: Install Java
-    apt: name=openjdk-15-jdk-headless state=latest
+    apt: name=openjdk-13-jdk-headless state=latest
 
   - name: Install Maven
     apt: 
