@@ -1,8 +1,17 @@
 ---
 - name: Test connect to servers
-  hosts: all
+  hosts: AppServers
   become: yes
 
   tasks: 
   - name: Ping to servers
-    ping:  
+    ping:
+
+  - name: Install Java and Maven
+    apt: name=openjdk-16-jdk-headless state=latest
+
+  - name: Install Maven
+    apt: name=maven state=latest
+
+  - name: Install GIT
+    apt: name=git state=latest  
