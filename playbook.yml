@@ -32,5 +32,5 @@
   - name: Output
     debug: msg={{ stdout }}
 
-  -name: Run App
+  - name: Run App
     shell: "java -jar target/*.jar"
