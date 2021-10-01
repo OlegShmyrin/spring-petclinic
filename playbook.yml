@@ -25,7 +25,11 @@
     
   - name: Run PetClinic
     shell: "cd /src/petclinic"
-    shell: "pwd"
-    shell: "mvn --version"
-    shell: "mvn package"
+      cmd: pwd
+           mvn --version
+           mvn package
+    register: stdout
+
+  - name: Output
+    debug: msg={{ stdout }}
     # shell: "java -jar target/*.jar"
