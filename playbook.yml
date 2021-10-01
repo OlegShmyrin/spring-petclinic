@@ -1,5 +1,5 @@
 ---
-- name: Test connect to servers
+- name: Prepare App Server and Build
   hosts: AppServers
   become: yes
   #  apt: upgrade=yes update_cache=yes cache_valid_time=86400
@@ -22,9 +22,9 @@
     ansible.builtin.git:
       repo: https://github.com/spring-projects/spring-petclinic.git  #TODO: Why no git file in my cloned repo
       dest: /src/petclinic
-    
+
   - name: Run PetClinic
-    chdir: "/src/petclinic"
+    chdir: /src/petclinic
     shell: "mvn build"
     register: stdout
 
