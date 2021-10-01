@@ -24,7 +24,8 @@
       dest: /src/petclinic
 
   - name: Run PetClinic
-    chdir: /src/petclinic
+    args:
+      chdir: /src/petclinic
     shell: "mvn build"
     register: stdout
 
