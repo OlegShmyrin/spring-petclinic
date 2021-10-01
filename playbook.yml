@@ -12,7 +12,7 @@
 
   - name: Install Maven
     apt: 
-      name: maven=3.6.3
+      name: maven=3.6.3*
 
   - name: Install GIT
     apt: name=git state=latest  
