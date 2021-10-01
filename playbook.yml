@@ -2,9 +2,6 @@
 - name: Test connect to servers
   hosts: AppServers
   become: yes
-   
-- name: Apt Update
-  become: yes
   apt:
     upgrade: yes
     update_cache: yes
