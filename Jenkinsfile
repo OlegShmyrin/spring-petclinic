@@ -45,7 +45,7 @@ pipeline {
                //sh "cat outputs.tf"
                sh "cat inventory"
                sh "chmod -x inventory"
-               sh "ansible-playbook -i inventory"
+               sh "ansible-playbook playbook.yml -i inventory"
             }
 
             /* resource "local_file" "public_ip" {
