@@ -25,9 +25,9 @@
     
   - name: Run PetClinic
     shell: "cd /src/petclinic"
-      cmd: pwd
-           mvn --version
-           mvn package
+   
+  - name: Build with Maven
+    shell: "mvn build"
     register: stdout
 
   - name: Output
