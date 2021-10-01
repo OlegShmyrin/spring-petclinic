@@ -24,9 +24,7 @@
       dest: /src/petclinic
     
   - name: Run PetClinic
-    shell: "cd /src/petclinic"
-   
-  - name: Build with Maven
+    chdir: "/src/petclinic"
     shell: "mvn build"
     register: stdout
 
