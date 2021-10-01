@@ -2,17 +2,21 @@
 - name: Test connect to servers
   hosts: AppServers
   become: yes
+  apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 86400
 
   tasks: 
   - name: Ping to servers
     ping:
 
   - name: Install Java
-    apt: name=openjdk-13-jdk-headless state=latest
-
+    apt: name=default-jdk state=latest
+    
   - name: Install Maven
     apt: 
-      name: maven=3.6.3*
+      name: maven
 
   - name: Install GIT
     apt: name=git state=latest  
