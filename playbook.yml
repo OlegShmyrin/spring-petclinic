@@ -23,7 +23,7 @@
       repo: https://github.com/spring-projects/spring-petclinic.git  #TODO: Why no git file in my cloned repo
       dest: /src/petclinic
 
-  - name: Run PetClinic
+  - name: Maven Package
     args:
       chdir: /src/petclinic
     shell: "mvn package"
