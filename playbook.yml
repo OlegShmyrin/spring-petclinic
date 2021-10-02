@@ -18,6 +18,7 @@
       dest: /src/petclinic/
     with_fileglob:
       - "target/*.jar"
+      - "petclinicrun.sh"
   
   # - name: Install Maven
   #   apt: 
