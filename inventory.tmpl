@@ -1,3 +1,6 @@
 [AppServers]
 ${AppServer-dns} ansible_host=${AppServer-pr-ip} ansible_user=ubuntu  ansible_ssh_private_key_file=terraform-key-pair.pem # ${AppServer-id}
 
+[DBServers]
+${MySqlServer-dns} ansible_host=${MySqlServer-pr-ip} ansible_user=ubuntu  ansible_ssh_private_key_file=terraform-key-pair.pem # ${MySqlServer-id}
+

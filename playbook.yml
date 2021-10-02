@@ -2,8 +2,7 @@
 - name: Prepare App Server and Build
   hosts: AppServers
   become: yes
-  #  apt: upgrade=yes update_cache=yes cache_valid_time=86400
-
+  
   tasks: 
   - name: Ping to servers
     ping:
@@ -34,3 +33,11 @@
 
   - name: Run App
     shell: "java -jar target/*.jar"
+
+- name: Configure MySQL server
+    hosts: DBServers
+    become: yes
+
+    tasks: 
+    - name: Ping to servers
+      ping:
