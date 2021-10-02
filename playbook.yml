@@ -15,7 +15,7 @@
     become: yes
     copy:
       src: "{{ item }}"
-      dest: /src/petclinic/
+      dest: /src/petclinic/petclinic.jar
     with_fileglob:
       - "target/*.jar"
       
