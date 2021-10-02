@@ -19,12 +19,22 @@
     with_fileglob:
       - "target/*.jar"
 
-  - name: Jar rename
-    args:
-      chdir: /src/petclinic
-    shell: "mv {{ item }} petclinic.jar"
-    with_fileglob:
-      - "*.jar"
+  # - name: Copy Builded App
+  #   become: yes
+  #   - find: 
+  #       src: /src/petclinic/{{ item }}
+  #     register: jar_files
+
+  #   - copy:
+  #       src: /src/petclinic/
+  #     - "target/*.jar"
+
+  # - name: Jar rename
+  #   args:
+  #     chdir: /src/petclinic
+  #   shell: "mv {{ item }} petclinic.jar"
+  #   with_fileglob:
+  #     - "*.jar"
       
   - name: Make a service
     become: yes
