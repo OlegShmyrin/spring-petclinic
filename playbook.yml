@@ -44,5 +44,5 @@
     shell: "java -jar *.jar"
     register: stdout
 
-    - name: Output
-      debug: msg={{ stdout }}
+  - name: Output
+    debug: msg={{ stdout }}
