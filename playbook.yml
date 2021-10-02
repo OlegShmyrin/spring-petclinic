@@ -12,7 +12,8 @@
     apt: name=default-jdk state=latest
   #
   - name: Copy Builded App
-    ansible.builtin.copy:
+    become: yes
+    copy:
       src: target/*.jar
       dest: /src/petclinic/
   
