@@ -13,7 +13,7 @@ pipeline {
     
 
     stages{
-       /* stage("Test"){
+        stage("Test"){
 
             agent { 
                 dockerfile {
@@ -24,13 +24,13 @@ pipeline {
 
             steps{
                 // sh "echo StrictHostKeyChecking=no >> ~/.ssh/config"
-                sh "ssh -V"
-                // sh "mvn test"
+                // sh "ssh -V"
+                sh "mvn test"
                 
                 
             }
         }
-            */
+        
         stage ("Terraform Apply"){
             agent {
                 label "ansible"
@@ -42,7 +42,6 @@ pipeline {
                sh "terraform init"
                sh "terraform apply -auto-approve"
                sh "terraform output"
-               //sh "cat outputs.tf"
                sh "cat inventory"
                sh "chmod -x inventory"
                sh "sudo mvn package -Dmaven.test.skip"
