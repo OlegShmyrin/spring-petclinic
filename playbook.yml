@@ -10,7 +10,7 @@
 
   - name: Install Java
     apt: name=default-jdk state=latest
-  #
+  
   - name: Copy Builded App
     become: yes
     copy:
@@ -18,8 +18,24 @@
       dest: /src/petclinic/
     with_fileglob:
       - "target/*.jar"
-      - "petclinicrun.sh"
+      
+  - name: Make a service
+    become: yes
+    copy:
+      src: "{{ item }}"
+      dest: /etc/systemd/system/
+    with_fileglob:
+      - "petclinic.service"
   
+  - name: Restart network service for interface eth0
+    ansible.builtin.service:
+      name: systemctl
+      state: restarted
+  
+  - name: Start pet clinic service
+    ansible.builtin.service:
+      name: petclinic
+      state: started
   # - name: Install Maven
   #   apt: 
   #     name: maven
@@ -41,11 +57,11 @@
   # - name: Output
   #   debug: msg={{ stdout }}
 
-  - name: Run App
-    args:
-      chdir: /src/petclinic
-    shell: "java -jar *.jar"
-    register: stdout
+  # - name: Run App
+  #   args:
+  #     chdir: /src/petclinic
+  #   shell: "java -jar *.jar"
+  #   register: stdout
 
-  - name: Output
-    debug: msg={{ stdout }}
+  # - name: Output
+  #   debug: msg={{ stdout }}

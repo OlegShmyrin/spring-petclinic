@@ -1,0 +1,13 @@
+[Unit]
+Description=Petclinic Java service
+
+[Service]
+WorkingDirectory=/src/petclinic
+ExecStart=/bin/java -jar *.jar
+User=ubuntu
+Type=simple
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
