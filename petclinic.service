@@ -3,7 +3,7 @@ Description=Petclinic Java service
 
 [Service]
 WorkingDirectory=/src/petclinic
-ExecStart=/bin/java -jar /src/petclinic/*.jar
+ExecStart=/bin/java -jar /src/petclinic/petclinic.jar
 User=ubuntu
 Type=simple
 Restart=on-failure
