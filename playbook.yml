@@ -29,11 +29,13 @@
       - "petclinic.service"
   
   - name: Restart systemd-sysctl
+    become: yes
     ansible.builtin.service:
       name: systemd-sysctl
       state: restarted
   
   - name: Start pet clinic service
+    become: yes
     ansible.builtin.service:
       name: petclinic
       state: started
