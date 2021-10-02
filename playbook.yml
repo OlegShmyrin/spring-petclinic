@@ -14,7 +14,7 @@
   - name: Copy Builded App
     become: yes
     copy:
-      src: target/*.jar
+      src: ../target/*.jar
       dest: /src/petclinic/
   
   # - name: Install Maven
