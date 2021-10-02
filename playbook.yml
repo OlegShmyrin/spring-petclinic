@@ -14,8 +14,10 @@
   - name: Copy Builded App
     become: yes
     copy:
-      src: /home/ubuntu/jenkins/workspace/PetClinic-pipe-line@2/target/spring-petclinic-2.5.0-SNAPSHOT.jar
+      src: "{{ item }}"
       dest: /src/petclinic/
+    with_fileglob:
+      - "target/*.jar"
   
   # - name: Install Maven
   #   apt: 
