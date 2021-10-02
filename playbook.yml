@@ -20,11 +20,11 @@
       - "target/*.jar"
 
   - name: Jar rename
-     args:
-       chdir: /src/petclinic
-     shell: "mv {{ item }} petclinic.jar"
-     with_fileglob:
-       - "*.jar"
+    args:
+      chdir: /src/petclinic
+    shell: "mv {{ item }} petclinic.jar"
+    with_fileglob:
+      - "*.jar"
       
   - name: Make a service
     become: yes
