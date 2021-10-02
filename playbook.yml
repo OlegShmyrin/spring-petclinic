@@ -10,29 +10,34 @@
 
   - name: Install Java
     apt: name=default-jdk state=latest
-    
-  - name: Install Maven
-    apt: 
-      name: maven
+  #
+  - name: Copy Builded App
+    ansible.builtin.copy:
+      src: target/*.jar
+      dest: /src/petclinic/
+  
+  # - name: Install Maven
+  #   apt: 
+  #     name: maven
 
-  - name: Install GIT
-    apt: name=git state=latest  
+  # - name: Install GIT
+  #   apt: name=git state=latest  
 
-  - name: Git clone repo
-    ansible.builtin.git:
-      repo: https://github.com/spring-projects/spring-petclinic.git  #TODO: Why no git file in my cloned repo
-      dest: /src/petclinic
+  # - name: Git clone repo
+  #   ansible.builtin.git:
+  #     repo: https://github.com/spring-projects/spring-petclinic.git  #TODO: Why no git file in my cloned repo
+  #     dest: /src/petclinic
 
-  - name: Maven Package
-    args:
-      chdir: /src/petclinic
-    shell: "sudo mvn package -Dmaven.test.skip"
-    register: stdout
+  # - name: Maven Package
+  #   args:
+  #     chdir: /src/petclinic
+  #   shell: "sudo mvn package -Dmaven.test.skip"
+  #   register: stdout
 
-  - name: Output
-    debug: msg={{ stdout }}
+  # - name: Output
+  #   debug: msg={{ stdout }}
 
   - name: Run App
     args:
       chdir: /src/petclinic
-    shell: "java -jar target/*.jar"
+    shell: "java -jar *.jar"

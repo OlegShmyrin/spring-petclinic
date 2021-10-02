@@ -46,7 +46,7 @@ pipeline {
                sh "cat inventory"
                sh "chmod -x inventory"
                sh "sudo mvn package -Dmaven.test.skip"
-               //sh "ansible-playbook playbook.yml -i inventory"
+               sh "ansible-playbook playbook.yml -i inventory"
             }
 
           
