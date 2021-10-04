@@ -23,7 +23,8 @@ pipeline {
                 }
 
             steps{
-               sh "mvn -v"                             
+               sh "mvn test"
+               sleep(time:15,unit:"MINUTES")                             
             }
         }
         
