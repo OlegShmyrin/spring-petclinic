@@ -10,6 +10,6 @@ I managed to implement such steps:
 * Run application on AWS AppServer
 
 
-[Presentation](./FinalProject.pptx)
+[Presentation PPTX](./FinalProject.pptx) [Presentation PDF](./FinalProject.pdf)
 
 ![Stages](images/stages.png)
