@@ -31,7 +31,7 @@ pipeline {
             }
         }
         
-        stage ("Terraform Apply"){
+        stage ("Build"){
             agent {
                 label "ansible"
             }
@@ -43,6 +43,18 @@ pipeline {
                sh "cat inventory"
                sh "chmod -x inventory"
                sh "sudo mvn package -Dmaven.test.skip"
+               sh "ansible-playbook playbook.yml -i inventory"
+            }
+
+          
+        }
+
+        stage ("Deploy"){
+            agent {
+                label "ansible"
+            }
+                      
+            steps{
                sh "ansible-playbook playbook.yml -i inventory"
             }
 
