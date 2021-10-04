@@ -23,11 +23,7 @@ pipeline {
                 }
 
             steps{
-                // sh "echo StrictHostKeyChecking=no >> ~/.ssh/config"
-                // sh "ssh -V"
-                sh "mvn test"
-                
-                
+               sh "mvn test"                             
             }
         }
         
@@ -43,7 +39,6 @@ pipeline {
                sh "cat inventory"
                sh "chmod -x inventory"
                sh "sudo mvn package -Dmaven.test.skip"
-               sh "ansible-playbook playbook.yml -i inventory"
             }
 
           
