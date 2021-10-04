@@ -23,10 +23,11 @@ pipeline {
                 }
 
             steps{
-               sh "mvn test"                             
+               sh "mvn -v"                             
             }
         }
         
+        /*
         stage ("Build"){
             agent {
                 label "ansible"
@@ -56,11 +57,14 @@ pipeline {
           
         }
 
-    }
+        */
 
+    }
+    /*
     post {
         always {
             cleanWs()
         }
     }
+    */
 }
