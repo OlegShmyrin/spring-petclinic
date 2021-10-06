@@ -24,11 +24,11 @@ pipeline {
 
             steps{
                sh "mvn test"
-               sleep(time:15,unit:"MINUTES")                             
+               // sleep(time:15,unit:"MINUTES")                             
             }
         }
         
-        /*
+        
         stage ("Build"){
             agent {
                 label "ansible"
@@ -58,14 +58,14 @@ pipeline {
           
         }
 
-        */
+        
 
     }
-    /*
+    
     post {
         always {
             cleanWs()
         }
     }
-    */
+    
 }
