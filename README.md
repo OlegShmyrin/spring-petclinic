@@ -1,4 +1,4 @@
-# spring-petclinic for EPAM DevOps Summer program 2021 
+# spring-petclinic for DevOps Summer program 2021 
 A sample Spring-based application on Java
 
 I managed to implement such steps:
